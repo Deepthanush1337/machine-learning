@@ -11,12 +11,15 @@ insurance_data = pd.read_csv("insurance.csv")
 """sns.scatterplot(x=insurance_data["bmi"], y=insurance_data["charges"], hue=insurance_data["smoker"])
 plt.show()"""
 
-x = insurance_data.drop(columns=["charges", "region"])
+x = insurance_data.drop(columns=["charges"])
 y = insurance_data["charges"]
 
 x["smoker"] = x["smoker"].map({"yes":1,"no":0 })
 x["sex"] = x["sex"].map({"male":1, "female":0})
 
+x = pd.get_dummies(x, columns=["region"], drop_first=True, dtype=int)
+x["age_smoker"] = x["age"] * x["smoker"]
+x["bmi_smoker"] = x["bmi"] * x["smoker"]
 # Train test split
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 42)
 
