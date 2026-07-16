@@ -17,4 +17,4 @@ model.fit(x_train, y_train)
 
 y_pred = model.predict(x_test)
 
-print(f"accuracy score: {accuracy_score(y_test, y_pred)}\nprecision score: {precision_score(y_test, y_pred)}")
+print(f"Accuracy score: {accuracy_score(y_test, y_pred)}\nPrecision score: {precision_score(y_test, y_pred)}")
