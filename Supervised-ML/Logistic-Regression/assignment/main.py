@@ -20,4 +20,4 @@ print(f"Accuracy : {accuracy_score(y_test, y_pred)}, Precision : {precision_scor
 l2_model = LogisticRegression(penalty="l2", max_iter=1000)
 l2_model.fit(x_train, y_train)
 y_pred = l2_model.predict(x_test)
-print(f"Accuracy: {accuracy_score(y_test, y_pred)}, Precision: {precision_score(y_test, y_pred)}")
+print(f"Accuracy : {accuracy_score(y_test, y_pred)}, Precision : {precision_score(y_test, y_pred)}")
