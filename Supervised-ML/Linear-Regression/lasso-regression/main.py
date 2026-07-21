@@ -43,9 +43,9 @@ LassoCV_model = LassoCV(
 )
 
 LassoCV_model.fit(x_train, y_train)
-print("best alpha: ", LassoCV_model.alpha_)
+print("Best alpha: ", LassoCV_model.alpha_)
 y_pred = LassoCV_model.predict(x_test)
 mse = mean_squared_error(y_test, y_pred)
-print(f"mse: {mse}")
+print(f"MSE: {mse}")
 sns.lineplot(x=alphas, y=mses, marker="o")
 plt.show()
