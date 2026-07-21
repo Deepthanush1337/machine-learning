@@ -20,10 +20,10 @@ x["sex"] = x["sex"].map({"male":1, "female":0})
 x = pd.get_dummies(x, columns=["region"], drop_first=True, dtype=int)
 x["age_smoker"] = x["age"] * x["smoker"]
 x["bmi_smoker"] = x["bmi"] * x["smoker"]
-# Train test split
+
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 42)
 
-# Train model
+
 model = LinearRegression()
 model.fit(x_train, y_train)
 
